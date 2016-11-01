@@ -1,4 +1,5 @@
-layout	title	permalink
-page
-DataStructure-java
-/DataStructure-java/
+---
+layout: page
+title: DataStructure-java
+permalink: /DataStructure-java/
+---
