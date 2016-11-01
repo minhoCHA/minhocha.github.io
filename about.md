@@ -5,3 +5,8 @@ permalink: /about/
 ---
 
 mino
+---
+layout: page
+title: ArrayList
+permalink: /Arraylist/
+---
