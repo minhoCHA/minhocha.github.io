@@ -1,4 +1,4 @@
 layout	title	permalink
 page
-About
-/about/
+DataStructure-java
+/DataStructure-java/
