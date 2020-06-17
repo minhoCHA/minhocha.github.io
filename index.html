@@ -1,43 +1,68 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Minho's Portfolio</title>
 
-    <link rel="stylesheet" href="stylesheets/main_styles.css">
-    <meta name="viewport" content="width=device-width">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <title>Minho's Portfolio</title>
 
-  </head>
-  <body>
-    <div class="wrapper">
-      <section>
-        <div class="nav">
-          <input type="checkbox" id="nav-check">
-          <div class="nav-header">
-            <div class="nav-title">
-              Minho
-            </div>
-          </div>
-          <div class="nav-btn">
-            <label for="nav-check">
-              <span></span>
-              <span></span>
-              <span></span>
-            </label>
-          </div>
-          
-          <div class="nav-links">
-            <a href="/pages/aboutme.html" target="_blank">About Me</a>
-            <a href="https://github.com/minhoCHA" target="_blank">Github</a>
-            <a href="https://www.linkedin.com/in/chaminho/" target="_blank">LinkedIn</a>
-            <a href="https://www.youtube.com/channel/UCFCtQMhr2WO9EtWrkLr0BxQ" target="_blank">Youtube</a>
-          </div>
+  <link rel="stylesheet" href="stylesheets/main_styles.css">
+  <meta name="viewport" content="width=device-width">
+  <script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
+    </script> 
+
+</head>
+
+<body>
+  <!----------------------------------------
+                NAVIGATION BAR 
+  ------------------------------------------>
+  <div class="wrapper">
+    <div class="nav">
+      <input type="checkbox" id="nav-check">
+      <div class="nav-header">
+        <div class="nav-title">
+          Minho
         </div>
-      </section>
+      </div>
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <div class="nav-links">
+        <a href="/pages/aboutme.html" target="_blank">About Me</a>
+        <a href="https://github.com/minhoCHA" target="_blank">Github</a>
+        <a href="https://www.linkedin.com/in/chaminho/" target="_blank">LinkedIn</a>
+        <a href="https://www.youtube.com/channel/UCFCtQMhr2WO9EtWrkLr0BxQ" target="_blank">Youtube</a>
+      </div>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-  </body>
+  </div>
+
+  <!----------------------------------------
+                MAIN CONTENT
+  ------------------------------------------>
+  <div id='wrapper'>
+    <div id='scroller'> <!-- For iScroll functionality -->
+      <!-- Each layer of depth defined by class "layer" -->
+      <div id='layer1' class='green layer hide' data-params='300,2000,10000'>
+        <h4>Hi, I'm Minho</h4>
+      </div>
+      <div id='layer2' class='green layer hide' data-params='2000,3000,10000'>
+        <h4>I am a dedicated full stack engineer</h4>
+      </div>
+      <div id='layer3' class='green layer hide' data-params='3000,5000,10000'>
+        <h4>HIRE ME</h4>
+      </div>
+      
+      
+    </div> <!-- scroller -->
+  </div> <!-- wrapper -->
+  <script src="javascripts/main.js"></script>
+</body>
+
 </html>
-
-
