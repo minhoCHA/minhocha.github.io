@@ -1,0 +1,155 @@
+/* removes all the basic styles */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: mediumFont;
+  src: url("Assets/fonts/SF-Pro-Display-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: semiboldFont;
+  src: url("Assets/fonts/SF-Pro-Display-Semibold.otf") format("opentype");
+}
+
+body {
+  font-family: regularFont;
+}
+
+.div-intro-img {
+  height: 100vh;
+}
+
+.div-intro-img img {
+  position: relative;
+  height: 60%;
+  width: 60%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 25%);
+  z-index: -1;
+}
+
+.div-intro-p {
+  position: absolute;
+  text-align: center;
+  width: 70vh;
+  left: 30%;
+  top: 15%;
+  font-size: 50px;
+  color: black;
+  z-index: 1;
+}
+
+.div-intro-p p {
+  font-size: 30px;
+  font-family: mediumFont;
+}
+
+.div-intro-p h2 {
+  font-family: semiboldFont;
+  font-size: 100px;
+}
+
+.section-info-p div h1{
+  padding-top: 100px;
+  width: 1000px;
+  text-align: left-align;
+  left: 40vh;
+  font-size: 50px;
+  color: #888;
+  font-size: 30px;
+  font-family: mediumFont;
+}
+
+.section-info-p div {
+  position: relative;
+  width: 80%;
+  top: 180%;
+  left: 10%;
+  text-align: left;
+}
+
+@media screen and (max-width: 720px) {
+  .section-info-p div h1 {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 360px) {
+  .section-info-p div h1 {
+    width: 100%;
+  }
+}
+
+.div-intro-p {
+  transition: background-color 1s;
+}
+
+.section-feature {
+  transform: translate(5%, 25%);
+  position: relative;
+}
+
+.div-feature {
+  position: absolute;
+  color: white;
+}
+
+.div-feature-column1 {
+  display: inline-block;
+}
+
+.div-feature-column2 {
+  display: inline-block;
+  transform: translate(200%, 0%);
+}
+
+.div-feature-2 {
+  transform: translate(0%, 200%);
+}
+
+.div-feature-3 {
+  transform: translate(0%, 400%);
+}
+
+.div-feature-5 {
+  transform: translate(0%, 200%);
+}
+
+.div-feature-6 {
+  transform: translate(0%, 400%);
+}
+
+.div-feature-column1 {
+  /* background-color: black; */
+  transform: translate(30%, 40%);
+}
+
+.div-feature-column2 {
+  /* background-color: black; */
+  transform: translate(80%, 40%);
+}
+
+.div-feature-main-p {
+  font-family: semiboldFont;
+  font-size: 25px;
+}
+
+.div-feature-p {
+  font-size: 23px;
+  font-family: mediumFont;
+}
+
+#div-feature-row1-p, #div-feature-row2-p, #div-feature-row3-p {
+  color: #888;
+}
+
+.feature-pics {
+  position: absolute;
+  top: 500%;
+}
+
+.feature-pics-div-p {
+}
