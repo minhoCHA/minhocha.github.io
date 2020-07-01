@@ -10,6 +10,11 @@
 }
 
 @font-face {
+  font-family: thinFont;
+  src: url("Assets/fonts/SF-Pro-Display-thin.otf") format("opentype");
+}
+
+@font-face {
   font-family: semiboldFont;
   src: url("Assets/fonts/SF-Pro-Display-Semibold.otf") format("opentype");
 }
@@ -34,7 +39,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, 25%);
-  z-index: -1;
+  z-index: -999;
 }
 
 .div-intro-p {
@@ -173,7 +178,7 @@ nav {
 .logo img {
   width: 3%;
   height: 3%;
-  float: left;
+  margin-left: 10%;
 }
 .nav-links{
   display: flex;
@@ -200,31 +205,20 @@ nav {
 }
 
 @media screen and (max-width:1024px){
-  body{
-      overflow: hidden;
-  }
-  }
-  .nav-links{
-      width: 60%;
-  }
+    body {
+      /* overflow: hidden; */
+    }
+}
+
+.nav-links{
+  width: 60%;
+}
 
 @media screen and (max-width:768px){
-      .nav-links{
-          position: absolute;
-          right:0px;
-          height:92vh;
-          top:8vh;
-          background-color: rgba(0,0,0,0.8);
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          width:50%;
-          transform: translatex(100%);
-          transition:transform 0.5s ease-in;
-      }
       .nav-links li{
           opacity:0;
       }
+
       .burger{
           display: block;
       }
@@ -270,40 +264,105 @@ nav {
     width: 100%
 }
 
-/* 
-  a:hover {
-    color: black;
-  } */
+
+  .fixed-nav-bar-link {
+  text-decoration: none;
+  color: black;
+  font-family: lightFont;
+}
+a:hover {
+  color: white;
+}
+.fixed-nav-bar-link:hover {
+    color: #06c;
+  }
+
+  .fixed-nav-bar-overview {
+    color: #b3b3b3;
+    font-family: lightFont;
+  }
   
   .fixed-nav-bar {
     display: inline-block;
   }
-  .fixed-nav-bar-div1, .fixed-nav-bar-h1 {
-  }
 
-  .fixed-nav-bar-div2 {
-    /* display: inline-block; */
-    /* box-sizing: border-box; */
+  .fixed-nav-bar-container, .fixed-nav-bar-row1, .fixed-nav-bar-row2 {
     width: 100%;
   }
 
-  .fixed-nav-bar-h1 {
+  .fixed-nav-bar-row1 {
+    font-size: 11px;
+    color: #888;
+  }
+
+  .col {
+    width: 25%;
+    box-sizing: border-box;
+    float: left; 
+    height: 25px;
+  }
+
+  .col-start {
+    font-family: mediumFont;
+    font-size: 18px;
+    width: 65%;
+    float: left; 
+    height: 25px;
+  }
+
+  .col2 {
+    width: 10%;
+    float: left; 
+    height: 25px;
+  }
+
+  .col3 {
+    width: 10%;
+    float: left; 
+    height: 25px;
+  }
+
+  .col4 {
+    width: 15%;
+    float: left; 
+    height: 25px;
+  }
+
+  @media screen and (max-width: 720px) {
+    .col {
+      width: 50%;
+    }
+  }
+  @media screen and (max-width: 360px) {
+    .col {
+      width: 100%;
+    }
+  }
+
+
+  .fixed-nav-bar-product-name {
     float: left;
   }
 
-  .fixed-nav-bar-button, .fixed-nav-bar-link, .fixed-nav-bar-h2 {
+  .fixed-nav-bar-button, .fixed-nav-bar-link, .fixed-nav-bar-overview {
     float: right;
   }
 
   .feature-pics-div-img-1 {
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .feature-pics-div-img-2 {
+    width: 100%;
+    height: 100%;
     z-index: -1;
   }
   
   .feature-pics-div-img {
-    position: relative;
-
+    position: absolute;
+    top: 150%;
   }
 
   .feature-pics-div-img-div1 {
@@ -338,3 +397,47 @@ nav {
   .feature-pics-div-img-h5 {
     font-size: 12px;
   }
+
+  .feature-pics-div-img-div4 {
+    position: absolute;
+    /* z-index: 999; */
+    opacity: 0;
+		-webkit-transform: scale(0.9);
+			 -moz-transform: scale(0.9);
+				-ms-transform: scale(0.9);
+				 -o-transform: scale(0.9);
+						transform: scale(0.9);
+		-webkit-transition: all 1s ease-in-out;
+			 -moz-transition: all 1s ease-in-out;
+				-ms-transition: all 1s ease-in-out;
+				 -o-transition: all 1s ease-in-out;
+						transition: all 1s ease-in-out;
+  }
+
+  .feature-pics-div-img-div4.visible {
+		opacity: 1;
+		-webkit-transform: none;
+			 -moz-transform: none;
+				-ms-transform: none;
+				 -o-transform: none;
+						transform: none;
+  }
+  
+  .feature-pics-div-img-2 {
+    /* z-index: 999; */
+  }
+
+.feature-pics-div-img-div4 {
+  z-index: 999;
+}
+
+.fixed-nav-bar-button {
+  font-family: lightFont;
+  background-color: #06c; 
+  color: white;
+  padding: 7px 15px;
+  text-align: center;
+  border-radius: 3em/3em;
+  border: white;
+  font-size: 11px;
+}
