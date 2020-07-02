@@ -441,3 +441,15 @@ a:hover {
   border: white;
   font-size: 11px;
 }
+
+.panel {
+  height: 100%;
+  width: 100%;
+}
+
+.panel.img2 {
+  margin-top: 400px;
+  z-index: 999;
+}
+
+
