@@ -1,3 +1,4 @@
+// START INTRO SECTION
 // define images
 var images = [
   "Assets/images/sequence_images/large_0001.jpg",
@@ -134,11 +135,12 @@ var images = [
   "Assets/images/sequence_images/large_0132.jpg",
   "Assets/images/sequence_images/large_0133.jpg",
 ];
-
+const intro = document.querySelector('.div-intro-img');
+var controller = new ScrollMagic.Controller(); // init controller
 // TweenMax can tween any property of any object. We use this object to cycle through the array
 var obj = { curImg: 0 };
 
-// create tween
+// intro image tween
 var tween = TweenMax.to(obj, 0.5,
   {
     curImg: images.length - 1,	// animate propery curImg to number of images
@@ -149,12 +151,7 @@ var tween = TweenMax.to(obj, 0.5,
   }
 );
 
-const intro = document.querySelector('.div-intro-img');
-
-// init controller
-var controller = new ScrollMagic.Controller();
-
-// build scene
+// intro scene
 var scene = new ScrollMagic.Scene({
   triggerElement: intro,
   triggerHook: 0,
@@ -164,7 +161,6 @@ var scene = new ScrollMagic.Scene({
   .addIndicators({ name: "intro image scene" }) // add indicators (requires plugin)
   .setPin(intro)
   .addTo(controller);
-
 
 // the animation to use
 const tl = gsap.timeline({ paused: true });
@@ -191,11 +187,13 @@ function update() {
   // Let the scroll event fire again
   requestId = null;
 }
+// END INTRO SECTION
 
+// START FEATURE SECTION
 const feature = document.querySelector('.section-feature');
 const video = feature.querySelector('video');
-// END SECTION
 
+// video scene
 const scene_feature = new ScrollMagic.Scene({
   duration: 100,
   triggerElement: video,
@@ -207,10 +205,9 @@ const scene_feature = new ScrollMagic.Scene({
     video.play();
   })
 
-
-// build tween
+// feature row tween
 var tween_feature_row1 = TweenLite.to('#div-feature-row1', 1, { css: { color: "black" }, ease: Back.easeOut });
-// build scene
+// build row scene
 var scene_feature_p = new ScrollMagic.Scene({
   triggerElement: "#div-feature-row1",
   duration: 200,
@@ -219,9 +216,9 @@ var scene_feature_p = new ScrollMagic.Scene({
   .addIndicators({ name: "tween css class" }) // add indicators (requires plugin)
   .addTo(controller);
 
-// build tween
+// feature row tween
 var tween_feature_row2 = TweenLite.to('#div-feature-row2', 1, { css: { color: "black" }, ease: Back.easeOut });
-// build scene
+// build row scene
 var scene_feature_p = new ScrollMagic.Scene({
   triggerElement: "#div-feature-row2",
   duration: 200,
@@ -230,9 +227,9 @@ var scene_feature_p = new ScrollMagic.Scene({
   .addIndicators({ name: "tween css class" }) // add indicators (requires plugin)
   .addTo(controller);
 
-// build tween
+// feature row tween
 var tween_feature_row3 = TweenLite.to('#div-feature-row3', 1, { css: { color: "black" }, ease: Back.easeOut });
-// build scene
+// build row scene
 var scene_feature_p = new ScrollMagic.Scene({
   triggerElement: "#div-feature-row3",
   duration: 200,
@@ -244,7 +241,7 @@ var scene_feature_p = new ScrollMagic.Scene({
 
 var tween_feature_row1_p = TweenLite.from('#div-feature-row1-p', 1, { css: { color: "white" }, ease: Back.easeOut });
 
-// build scene
+// build row scene
 var scene_feature_row1_p = new ScrollMagic.Scene({
   triggerElement: "#div-feature-row1",
   duration: 200,
@@ -253,10 +250,9 @@ var scene_feature_row1_p = new ScrollMagic.Scene({
   .addIndicators({ name: "tween css class" }) // add indicators (requires plugin)
   .addTo(controller);
 
-
 var tween_feature_row2_p = TweenLite.from('#div-feature-row2-p', 1, { css: { color: "white" }, ease: Back.easeOut });
 
-// build scene
+// build row scene
 var scene_feature_row2_p = new ScrollMagic.Scene({
   triggerElement: "#div-feature-row2",
   duration: 200,
@@ -267,7 +263,7 @@ var scene_feature_row2_p = new ScrollMagic.Scene({
 
 var tween_feature_row3_p = TweenLite.from('#div-feature-row3-p', 1, { css: { color: "white" }, ease: Back.easeOut });
 
-// build scene
+// build row scene
 var scene_feature_row3_p = new ScrollMagic.Scene({
   triggerElement: "#div-feature-row3",
   duration: 200,
@@ -276,16 +272,7 @@ var scene_feature_row3_p = new ScrollMagic.Scene({
   .addIndicators({ name: "tween css class" }) // add indicators (requires plugin)
   .addTo(controller);
 
-
-$(window).scroll(function () {
-  if ($(this).scrollTop() > 100) {
-    $('.fixed-nav-bar').addClass('sticky')
-  } else {
-    $('.fixed-nav-bar').removeClass('sticky')
-  }
-});
-
-// build scene
+// build picture scene
 var scene_feature_pic = new ScrollMagic.Scene({
   triggerElement: ".feature-pics-div-p",
   duration: 500,
@@ -310,19 +297,7 @@ var scene_feature_pic_p = new ScrollMagic.Scene({
   .addIndicators({ name: "feature text" }) // add indicators (requires plugin)
   .addTo(controller);
 
-
-
-// var scene_feature_slide_p = new ScrollMagic.Scene({
-//   triggerElement: ".feature-pics-div-img-1",
-//   triggerHook: 0.1, // show, when scrolled 10% into view
-//   duration: "80%", // hide 10% before exiting view (80% + 10% from bottom)
-//   offset: 30 // move trigger to center of element
-// })
-//   .setClassToggle(".feature-pics-div-img-div4", "visible") // add class to reveal
-//   .addIndicators({ name: "slides text" }) // add indicators (requires plugin)
-//   .addTo(controller);
-
-// build scene
+// build picture paragraph scene
 var scene_feature_pic2 = new ScrollMagic.Scene({
   triggerElement: ".feature-pics-div-p",
   duration: 100
@@ -334,62 +309,38 @@ var scene_feature_pic2 = new ScrollMagic.Scene({
   .addIndicators({ name: "feature pic2" }) // add indicators (requires plugin)
   .setPin('.feature-pics-div-img-2')
   .addTo(controller);
+// END FEATURE SECTION
 
 
-
-// var wipes_controller = new ScrollMagic.Controller({
-//   globalSceneOptions: {
-//     triggerHook: 0.2,
-//     duration: "100%" // this works just fine with duration 0 as well
-//     // However with large numbers (>20) of pinned sections display errors can occur so every section should be unpinned once it's covered by the next section.
-//     // Normally 100% would work for this, but here 200% is used, as Panel 3 is shown for more than 100% of scrollheight due to the pause.
-//   }
-// });
-
-// // get all slides
-// var wipes_slides = document.querySelectorAll("section.panel");
-
-// // create scene for every slide
-// for (var i = 0; i < wipes_slides.length; i++) {
-//   new ScrollMagic.Scene({
-//     triggerElement: wipes_slides[i],
-//     triggerHook: 0.5
-//   })
-//     .setPin(wipes_slides[i], { pushFollowers: false })
-//     .addIndicators({ name: "slides" }) // add indicators (requires plugin)
-//     .addTo(wipes_controller);
-// }
-
-// // build scene
-// var scene_small_pic2 = new ScrollMagic.Scene({
-//   triggerElement: ".panel img3",
-//   duration: 100,
-// })
-//   // animate color and top border in relation to scroll position
-//   .setTween(".feature-pics-div-img-2", {
-//     scale: 0.5
-//   }) // the tween durtion can be omitted and defaults to 1
-//   .addIndicators({ name: "small pic2" }) // add indicators (requires plugin)
-//   .setPin('.feature-pics-div-img-2')
-//   .addTo(controller);
-
-  let wipeController = new ScrollMagic.Controller({
-      globalSceneOptions: {
-          triggerHook: 'onLeave'
-      }
-  });
-
-  var wipes_slides = document.querySelectorAll("section.panel");
-
-  for(let panel of wipes_slides) {
-
-      var wipeScene = new ScrollMagic.Scene({
-          triggerElement: panel
-      })
-      .addIndicators()
-      .on('progress', function (e) {
-          console.log(e.progress.toFixed(3));
-      })
-      .setPin(panel) 
-      .addTo(wipeController);        
+// START SLIDES SECTION
+let wipeController = new ScrollMagic.Controller({
+  globalSceneOptions: {
+    triggerHook: 'onLeave'
   }
+});
+
+var wipes_slides = document.querySelectorAll("section.panel");
+
+for (let panel of wipes_slides) {
+
+  var wipeScene = new ScrollMagic.Scene({
+    triggerElement: panel
+  })
+    .addIndicators()
+    .on('progress', function (e) {
+      console.log(e.progress.toFixed(3));
+    })
+    .setPin(panel)
+    .addTo(wipeController);
+}
+// END SLIDES SECTION
+
+// START NAV BAR SECTION
+$(window).scroll(function () {
+  if ($(this).scrollTop() > 100) {
+    $('.fixed-nav-bar').addClass('sticky')
+  } else {
+    $('.fixed-nav-bar').removeClass('sticky')
+  }
+});
+// END NAVBAR SECTION
