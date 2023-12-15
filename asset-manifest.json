@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/minhoCHA.github.io/static/css/main.f855e6bc.css",
+    "main.js": "/minhoCHA.github.io/static/js/main.54d95c7a.js",
+    "static/js/787.d4aba7ab.chunk.js": "/minhoCHA.github.io/static/js/787.d4aba7ab.chunk.js",
+    "static/media/logo.svg": "/minhoCHA.github.io/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/minhoCHA.github.io/index.html",
+    "main.f855e6bc.css.map": "/minhoCHA.github.io/static/css/main.f855e6bc.css.map",
+    "main.54d95c7a.js.map": "/minhoCHA.github.io/static/js/main.54d95c7a.js.map",
+    "787.d4aba7ab.chunk.js.map": "/minhoCHA.github.io/static/js/787.d4aba7ab.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.54d95c7a.js"
+  ]
+}
